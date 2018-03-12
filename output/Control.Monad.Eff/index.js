@@ -6,6 +6,8 @@ var Control_Apply = require("../Control.Apply");
 var Control_Bind = require("../Control.Bind");
 var Control_Monad = require("../Control.Monad");
 var Data_Functor = require("../Data.Functor");
+var Data_Monoid = require("../Data.Monoid");
+var Data_Semigroup = require("../Data.Semigroup");
 var Data_Unit = require("../Data.Unit");
 var monadEff = new Control_Monad.Monad(function () {
     return applicativeEff;
@@ -22,7 +24,17 @@ var applicativeEff = new Control_Applicative.Applicative(function () {
     return applyEff;
 }, $foreign.pureE);
 var functorEff = new Data_Functor.Functor(Control_Applicative.liftA1(applicativeEff));
+var semigroupEff = function (dictSemigroup) {
+    return new Data_Semigroup.Semigroup(Control_Apply.lift2(applyEff)(Data_Semigroup.append(dictSemigroup)));
+};
+var monoidEff = function (dictMonoid) {
+    return new Data_Monoid.Monoid(function () {
+        return semigroupEff(dictMonoid.Semigroup0());
+    }, Control_Applicative.pure(applicativeEff)(Data_Monoid.mempty(dictMonoid)));
+};
 module.exports = {
+    semigroupEff: semigroupEff, 
+    monoidEff: monoidEff, 
     functorEff: functorEff, 
     applyEff: applyEff, 
     applicativeEff: applicativeEff, 

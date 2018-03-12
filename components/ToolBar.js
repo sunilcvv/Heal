@@ -18,6 +18,7 @@ class ToolBar extends Controller {
 
 	constructor(props, children, state) {
 		super(props, children, state);
+		this.HEAL = STR.HEAL2;
 	}
 
 	onPop = () => {}

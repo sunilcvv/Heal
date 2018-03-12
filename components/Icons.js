@@ -25,6 +25,7 @@ class Icons extends Controller {
 
 	constructor(props, children, state) {
 		super(props, children, state);
+		this.Meditate = STR.Meditate1;
 	}
 
 	onPop = () => {}
@@ -60,8 +61,7 @@ class Icons extends Controller {
 				width={this.props.width ? this.props.width : "match_parent"}
 				orientation="vertical"
 				padding="17,5,17,10"
-				onClick={this.props.onClick_IconContent}
-				background={Color.A__FFCAF1F3}
+				background={Color.A__FFCAF3F3}
 				cornerRadius="31"
 				root={true}
 				margin={this.props.margin ? this.props.margin : "0,0,0,0"}

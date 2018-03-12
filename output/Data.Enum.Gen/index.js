@@ -14,7 +14,7 @@ var genBoundedEnum = function (dictMonadGen) {
         var v = Data_Enum.succ(dictBoundedEnum.Enum1())(Data_Bounded.bottom(dictBoundedEnum.Bounded0()));
         if (v instanceof Data_Maybe.Just) {
             var possibilities = Data_Enum.enumFromTo(dictBoundedEnum.Enum1())(Data_Unfoldable.unfoldableArray)(v.value0)(Data_Bounded.top(dictBoundedEnum.Bounded0()));
-            return Control_Monad_Gen.elements(dictMonadGen)(Data_Foldable.foldableArray)(new Data_NonEmpty.NonEmpty(Data_Bounded.bottom(dictBoundedEnum.Bounded0()), possibilities));
+            return Control_Monad_Gen.elements(dictMonadGen)(Data_NonEmpty.foldable1NonEmpty(Data_Foldable.foldableArray))(new Data_NonEmpty.NonEmpty(Data_Bounded.bottom(dictBoundedEnum.Bounded0()), possibilities));
         };
         if (v instanceof Data_Maybe.Nothing) {
             return Control_Applicative.pure((dictMonadGen.Monad0()).Applicative0())(Data_Bounded.bottom(dictBoundedEnum.Bounded0()));

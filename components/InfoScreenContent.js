@@ -66,7 +66,7 @@ class InfoScreenContent extends Controller {
 							height="28"
 							width="match_parent"
 							margin="0,28,0,0"
-							text={STR.InfoHeading38}
+							text={STR.InfoHeading3}
 							textSize={FontSize.A_20}
 							color={FontColor.A__FF000000}
 							fontStyle={Font.AMARANTH}
@@ -77,7 +77,7 @@ class InfoScreenContent extends Controller {
 							height="90"
 							width="match_parent"
 							margin="0,22,0,0"
-							text={STR.QuoteForSelected39}
+							text={STR.QuoteForSelected4}
 							textSize={FontSize.A_20}
 							color={FontColor.A__FF000000}
 							fontStyle={Font.ABEEZEE_REGULAR}
@@ -89,7 +89,7 @@ class InfoScreenContent extends Controller {
 							width="match_parent"
 							margin="0,19,0,0"
 							weight="1"
-							text={STR.InfoContent40}
+							text={STR.InfoContent5}
 							textSize={FontSize.A_18}
 							color={FontColor.A__FF000000}
 							fontStyle={Font.ABEEZEE_REGULAR}

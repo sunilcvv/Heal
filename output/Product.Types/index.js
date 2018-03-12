@@ -2,25 +2,40 @@
 "use strict";
 var Data_Foreign_Class = require("../Data.Foreign.Class");
 var Data_Foreign_Generic = require("../Data.Foreign.Generic");
+var Data_Foreign_Generic_Class = require("../Data.Foreign.Generic.Class");
 var Data_Generic_Rep = require("../Data.Generic.Rep");
-var Presto_Core_Utils_Encoding = require("../Presto.Core.Utils.Encoding");
-var FetchListFailure = (function () {
-    function FetchListFailure(value0) {
-        this.value0 = value0;
+var Data_Symbol = require("../Data.Symbol");
+var SUCCESS = (function () {
+    function SUCCESS() {
+
     };
-    FetchListFailure.create = function (value0) {
-        return new FetchListFailure(value0);
-    };
-    return FetchListFailure;
+    SUCCESS.value = new SUCCESS();
+    return SUCCESS;
 })();
-var ScreenFailure = (function () {
-    function ScreenFailure(value0) {
+var FAILURE = (function () {
+    function FAILURE() {
+
+    };
+    FAILURE.value = new FAILURE();
+    return FAILURE;
+})();
+var FetchOperatorFailure = (function () {
+    function FetchOperatorFailure(value0) {
         this.value0 = value0;
     };
-    ScreenFailure.create = function (value0) {
-        return new ScreenFailure(value0);
+    FetchOperatorFailure.create = function (value0) {
+        return new FetchOperatorFailure(value0);
     };
-    return ScreenFailure;
+    return FetchOperatorFailure;
+})();
+var BillPaymentFailure = (function () {
+    function BillPaymentFailure(value0) {
+        this.value0 = value0;
+    };
+    BillPaymentFailure.create = function (value0) {
+        return new BillPaymentFailure(value0);
+    };
+    return BillPaymentFailure;
 })();
 var UserAbort = (function () {
     function UserAbort() {
@@ -29,8 +44,43 @@ var UserAbort = (function () {
     UserAbort.value = new UserAbort();
     return UserAbort;
 })();
+var genericBillPayStatus = new Data_Generic_Rep.Generic(function (x) {
+    if (x instanceof SUCCESS) {
+        return new Data_Generic_Rep.Inl(Data_Generic_Rep.NoArguments.value);
+    };
+    if (x instanceof FAILURE) {
+        return new Data_Generic_Rep.Inr(Data_Generic_Rep.NoArguments.value);
+    };
+    throw new Error("Failed pattern match at Product.Types line 16, column 8 - line 16, column 65: " + [ x.constructor.name ]);
+}, function (x) {
+    if (x instanceof Data_Generic_Rep.Inl) {
+        return SUCCESS.value;
+    };
+    if (x instanceof Data_Generic_Rep.Inr) {
+        return FAILURE.value;
+    };
+    throw new Error("Failed pattern match at Product.Types line 16, column 8 - line 16, column 65: " + [ x.constructor.name ]);
+});
+var encodeBillPayStatus = new Data_Foreign_Class.Encode(Data_Foreign_Generic.genericEncode(genericBillPayStatus)(Data_Foreign_Generic_Class.genericEncodeSum(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "SUCCESS";
+}))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments))(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "FAILURE";
+}))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments)))((function () {
+    var $6 = {};
+    for (var $7 in Data_Foreign_Generic.defaultOptions) {
+        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $7)) {
+            $6[$7] = Data_Foreign_Generic["defaultOptions"][$7];
+        };
+    };
+    $6.unwrapSingleConstructors = false;
+    return $6;
+})()));
 module.exports = {
-    FetchListFailure: FetchListFailure, 
-    ScreenFailure: ScreenFailure, 
-    UserAbort: UserAbort
+    FetchOperatorFailure: FetchOperatorFailure, 
+    BillPaymentFailure: BillPaymentFailure, 
+    UserAbort: UserAbort, 
+    SUCCESS: SUCCESS, 
+    FAILURE: FAILURE, 
+    genericBillPayStatus: genericBillPayStatus, 
+    encodeBillPayStatus: encodeBillPayStatus
 };

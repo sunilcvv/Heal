@@ -21,9 +21,9 @@ var Prelude = require("../Prelude");
 var Presto_Core_Flow = require("../Presto.Core.Flow");
 var Presto_Core_Language_Runtime_Interpreter = require("../Presto.Core.Language.Runtime.Interpreter");
 var Presto_Core_Types_Language_Flow = require("../Presto.Core.Types.Language.Flow");
-var Product_Flow = require("../Product.Flow");
+var Product_Healapp = require("../Product.Healapp");
 var UI_Types = require("../UI.Types");
-var mainFlow = Control_Bind.bind(Control_Monad_Free.freeBind)(Control_Monad_Except_Trans.runExceptT(Product_Flow.screenFlow))(function (v) {
+var mainFlow = Control_Bind.bind(Control_Monad_Free.freeBind)(Control_Monad_Except_Trans.runExceptT(Product_Healapp.homescreen))(function (v) {
     if (v instanceof Data_Either.Right) {
         return Control_Applicative.pure(Control_Monad_Free.freeApplicative)(Data_Unit.unit);
     };

@@ -7,11 +7,15 @@ var Control_Monad_Free = require("../Control.Monad.Free");
 var Data_Unit = require("../Data.Unit");
 var Engineering_Types_App = require("../Engineering.Types.App");
 var Prelude = require("../Prelude");
-var Product_Types = require("../Product.Types");
 var UI_Flow = require("../UI.Flow");
-var screenFlow = Control_Bind.bind(Control_Monad_Except_Trans.bindExceptT(Control_Monad_Free.freeMonad))(UI_Flow.splashScreen)(function (v) {
+var UI_Types = require("../UI.Types");
+var dothisFunction = Control_Bind.bind(Control_Monad_Except_Trans.bindExceptT(Control_Monad_Free.freeMonad))(UI_Flow.infoScreen)(function (v) {
     return Control_Applicative.pure(Control_Monad_Except_Trans.applicativeExceptT(Control_Monad_Free.freeMonad))(Data_Unit.unit);
 });
+var homescreen = Control_Bind.bind(Control_Monad_Except_Trans.bindExceptT(Control_Monad_Free.freeMonad))(UI_Flow.homeScreen)(function (v) {
+    return dothisFunction;
+});
 module.exports = {
-    screenFlow: screenFlow
+    dothisFunction: dothisFunction, 
+    homescreen: homescreen
 };

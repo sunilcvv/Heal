@@ -4,6 +4,7 @@ var $foreign = require("./foreign");
 var Control_Bind = require("../Control.Bind");
 var Control_Monad_Eff = require("../Control.Monad.Eff");
 var Control_Monad_Eff_Exception = require("../Control.Monad.Eff.Exception");
+var Control_Monad_Eff_Now = require("../Control.Monad.Eff.Now");
 var Control_Semigroupoid = require("../Control.Semigroupoid");
 var Data_Date = require("../Data.Date");
 var Data_Date_Component = require("../Data.Date.Component");
@@ -135,8 +136,10 @@ module.exports = {
     toString: toString, 
     toTimeString: toTimeString, 
     toUTCString: toUTCString, 
+    fromInstant: $foreign.fromInstant, 
     isValid: $foreign.isValid, 
     jsdate: $foreign.jsdate, 
     jsdateLocal: $foreign.jsdateLocal, 
+    now: $foreign.now, 
     parse: $foreign.parse
 };

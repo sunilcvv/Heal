@@ -14,8 +14,8 @@ import Engineering.Helpers.Commons (callAPI', mkNativeRequest, showUI')
 import Engineering.OS.Permission (checkIfPermissionsGranted, requestPermissions)
 import Engineering.Types.App (AppEffects, CancelerEffects)
 import Presto.Core.Flow (APIRunner, Flow, PermissionCheckRunner, PermissionRunner(..), PermissionTakeRunner, Runtime(..), UIRunner, run, forkUI)
-import Product.Flow (screenFlow)
-import UI.Types (InitScreen(..))
+import Product.Healapp
+import UI.Types 
 
 main :: Eff (AppEffects) (Canceler (CancelerEffects))
 main = do
@@ -40,7 +40,7 @@ main = do
 
 mainFlow :: Flow Unit
 mainFlow = do
-  result <- (runExceptT $ screenFlow)
+  result <- (runExceptT $ homescreen)
   case result of
     Right a -> pure unit
     Left a -> mainFlow
