@@ -34,6 +34,6 @@
     "commit": "0dbee88d47af4f9ab2935e5c9aea05e7c55dbe8a"
   },
   "_source": "https://github.com/purescript/purescript-enums.git",
-  "_target": "^3.1.0",
+  "_target": "^3.2.1",
   "_originalSource": "purescript-enums"
 }

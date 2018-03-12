@@ -29,6 +29,7 @@ class InfoScreen extends Controller {
 				width="match_parent"
 				orientation="horizontal"
 				gravity="center"
+				background={Color.A__FFFFFFFF}
 				cornerRadius="0"
 				root={true}
 				clickable="true"

@@ -1,7 +1,9 @@
 {
-  "name": "icici-cc",
-  "description": "ICICI",
+  "name": "billpay-presto-ui",
+  "homepage": "https://github.com/juspay/presto-billpay-demo",
+  "description": "Bill Payments Demo App",
   "main": "",
+  "license": "MIT",
   "private": true,
   "ignore": [
     "**/.*",
@@ -16,7 +18,7 @@
     "purescript-aff": "^3.0.0",
     "purescript-transformers": "^3.2.0",
     "purescript-arrays": "^4.0.1",
-    "purescript-foreign-generic": "5.0.0",
+    "purescript-foreign-generic": "4.3.0",
     "purescript-free": "^4.1.0",
     "purescript-presto": "https://github.com/juspay/purescript-presto.git",
     "purescript-monad-loops": "^0.4.0",

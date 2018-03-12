@@ -17,14 +17,15 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-prelude": "^3.0.0"
+    "purescript-prelude": "^3.0.0",
+    "purescript-monoid": "^3.3.0"
   },
-  "version": "3.1.0",
-  "_release": "3.1.0",
+  "version": "3.2.0",
+  "_release": "3.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "v3.1.0",
-    "commit": "06d02be3a92c1e60f665573aff9dbf23b6587cd1"
+    "tag": "v3.2.0",
+    "commit": "44fad683ec8b9042c20eaccaf9ba6ad06e218d09"
   },
   "_source": "https://github.com/purescript/purescript-eff.git",
   "_target": "^3.0.0",

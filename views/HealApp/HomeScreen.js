@@ -23,6 +23,10 @@ class HomeScreen extends Controller {
 
 	onPop = () => {}
 
+	Heal_flow = () => {
+		window.__duiShowScreen(null, {screen: "InfoScreen"});
+	}
+
 	render = () => {
 		if (typeof this.preRender === "function") { this.preRender(); }
 		this.layout = (

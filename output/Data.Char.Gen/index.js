@@ -26,7 +26,7 @@ var genAlphaLowercase = function (dictMonadGen) {
     return Data_Functor.map((((dictMonadGen.Monad0()).Bind1()).Apply0()).Functor0())(Data_Char.fromCharCode)(Control_Monad_Gen_Class.chooseInt(dictMonadGen)(97)(122));
 };
 var genAlpha = function (dictMonadGen) {
-    return Control_Monad_Gen.oneOf(dictMonadGen)(Data_Foldable.foldableArray)(new Data_NonEmpty.NonEmpty(genAlphaLowercase(dictMonadGen), [ genAlphaUppercase(dictMonadGen) ]));
+    return Control_Monad_Gen.oneOf(dictMonadGen)(Data_NonEmpty.foldable1NonEmpty(Data_Foldable.foldableArray))(new Data_NonEmpty.NonEmpty(genAlphaLowercase(dictMonadGen), [ genAlphaUppercase(dictMonadGen) ]));
 };
 module.exports = {
     genAlpha: genAlpha, 

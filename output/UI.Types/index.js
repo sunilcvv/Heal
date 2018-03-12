@@ -8,20 +8,6 @@ var Data_Generic_Rep = require("../Data.Generic.Rep");
 var Data_Symbol = require("../Data.Symbol");
 var Presto_Core_Flow = require("../Presto.Core.Flow");
 var Presto_Core_Types_Language_Interaction = require("../Presto.Core.Types.Language.Interaction");
-var SplashScreenRendered = (function () {
-    function SplashScreenRendered() {
-
-    };
-    SplashScreenRendered.value = new SplashScreenRendered();
-    return SplashScreenRendered;
-})();
-var SplashScreen = (function () {
-    function SplashScreen() {
-
-    };
-    SplashScreen.value = new SplashScreen();
-    return SplashScreen;
-})();
 var InitScreenRendered = (function () {
     function InitScreenRendered() {
 
@@ -36,16 +22,34 @@ var InitScreen = (function () {
     InitScreen.value = new InitScreen();
     return InitScreen;
 })();
-var genericSplashScreenAction = new Data_Generic_Rep.Generic(function (x) {
-    return Data_Generic_Rep.NoArguments.value;
-}, function (x) {
-    return SplashScreenRendered.value;
-});
-var genericSplashScreen = new Data_Generic_Rep.Generic(function (x) {
-    return Data_Generic_Rep.NoArguments.value;
-}, function (x) {
-    return SplashScreen.value;
-});
+var InfoScreenRendered = (function () {
+    function InfoScreenRendered() {
+
+    };
+    InfoScreenRendered.value = new InfoScreenRendered();
+    return InfoScreenRendered;
+})();
+var InfoScreen = (function () {
+    function InfoScreen() {
+
+    };
+    InfoScreen.value = new InfoScreen();
+    return InfoScreen;
+})();
+var HomeScreenClick = (function () {
+    function HomeScreenClick() {
+
+    };
+    HomeScreenClick.value = new HomeScreenClick();
+    return HomeScreenClick;
+})();
+var HomeScreen = (function () {
+    function HomeScreen() {
+
+    };
+    HomeScreen.value = new HomeScreen();
+    return HomeScreen;
+})();
 var genericInitScreenAction = new Data_Generic_Rep.Generic(function (x) {
     return Data_Generic_Rep.NoArguments.value;
 }, function (x) {
@@ -56,40 +60,62 @@ var genericInitScreen = new Data_Generic_Rep.Generic(function (x) {
 }, function (x) {
     return InitScreen.value;
 });
-var encodeSplashScreen = new Data_Foreign_Class.Encode(Data_Foreign_Generic.genericEncode(genericSplashScreen)(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
-    return "SplashScreen";
-}))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments))((function () {
-    var $14 = {};
-    for (var $15 in Data_Foreign_Generic.defaultOptions) {
-        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $15)) {
-            $14[$15] = Data_Foreign_Generic["defaultOptions"][$15];
-        };
-    };
-    $14.unwrapSingleConstructors = false;
-    return $14;
-})()));
+var genericInfoScreenAction = new Data_Generic_Rep.Generic(function (x) {
+    return Data_Generic_Rep.NoArguments.value;
+}, function (x) {
+    return InfoScreenRendered.value;
+});
+var genericInfoScreen = new Data_Generic_Rep.Generic(function (x) {
+    return Data_Generic_Rep.NoArguments.value;
+}, function (x) {
+    return InfoScreen.value;
+});
+var genericHomeScreenAction = new Data_Generic_Rep.Generic(function (x) {
+    return Data_Generic_Rep.NoArguments.value;
+}, function (x) {
+    return HomeScreenClick.value;
+});
+var genericHomeScreen = new Data_Generic_Rep.Generic(function (x) {
+    return Data_Generic_Rep.NoArguments.value;
+}, function (x) {
+    return HomeScreen.value;
+});
 var encodeInitScreen = new Data_Foreign_Class.Encode(Data_Foreign_Generic.genericEncode(genericInitScreen)(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
     return "InitScreen";
 }))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments))((function () {
-    var $17 = {};
-    for (var $18 in Data_Foreign_Generic.defaultOptions) {
-        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $18)) {
-            $17[$18] = Data_Foreign_Generic["defaultOptions"][$18];
+    var $21 = {};
+    for (var $22 in Data_Foreign_Generic.defaultOptions) {
+        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $22)) {
+            $21[$22] = Data_Foreign_Generic["defaultOptions"][$22];
         };
     };
-    $17.unwrapSingleConstructors = false;
-    return $17;
+    $21.unwrapSingleConstructors = false;
+    return $21;
 })()));
-var decodegenericSplashScreenAction = new Data_Foreign_Class.Decode(Data_Foreign_Generic.genericDecode(genericSplashScreenAction)(Data_Foreign_Generic_Class.genericDecodeConstructor(new Data_Symbol.IsSymbol(function () {
-    return "SplashScreenRendered";
-}))(Data_Foreign_Generic_Class.genericDecodeArgsNoArguments)(Data_Foreign_Generic_Class.genericCountArgsNoArguments))(Data_Foreign_Generic.defaultOptions));
-var splashScreenInteract = new Presto_Core_Types_Language_Interaction.Interact(function () {
-    return decodegenericSplashScreenAction;
-}, function () {
-    return encodeSplashScreen;
-}, function (x) {
-    return Presto_Core_Types_Language_Interaction.defaultInteract(encodeSplashScreen)(decodegenericSplashScreenAction)(x);
-});
+var encodeInfoScreen = new Data_Foreign_Class.Encode(Data_Foreign_Generic.genericEncode(genericInfoScreen)(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "InfoScreen";
+}))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments))((function () {
+    var $24 = {};
+    for (var $25 in Data_Foreign_Generic.defaultOptions) {
+        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $25)) {
+            $24[$25] = Data_Foreign_Generic["defaultOptions"][$25];
+        };
+    };
+    $24.unwrapSingleConstructors = false;
+    return $24;
+})()));
+var encodeHomeScreen = new Data_Foreign_Class.Encode(Data_Foreign_Generic.genericEncode(genericHomeScreen)(Data_Foreign_Generic_Class.genericEncodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "HomeScreen";
+}))(Data_Foreign_Generic_Class.genericEncodeArgsNoArguments))((function () {
+    var $27 = {};
+    for (var $28 in Data_Foreign_Generic.defaultOptions) {
+        if ({}.hasOwnProperty.call(Data_Foreign_Generic.defaultOptions, $28)) {
+            $27[$28] = Data_Foreign_Generic["defaultOptions"][$28];
+        };
+    };
+    $27.unwrapSingleConstructors = false;
+    return $27;
+})()));
 var decodegenericInitScreenAction = new Data_Foreign_Class.Decode(Data_Foreign_Generic.genericDecode(genericInitScreenAction)(Data_Foreign_Generic_Class.genericDecodeConstructor(new Data_Symbol.IsSymbol(function () {
     return "InitScreenRendered";
 }))(Data_Foreign_Generic_Class.genericDecodeArgsNoArguments)(Data_Foreign_Generic_Class.genericCountArgsNoArguments))(Data_Foreign_Generic.defaultOptions));
@@ -100,16 +126,43 @@ var initScreenInteract = new Presto_Core_Types_Language_Interaction.Interact(fun
 }, function (x) {
     return Presto_Core_Types_Language_Interaction.defaultInteract(encodeInitScreen)(decodegenericInitScreenAction)(x);
 });
+var decodegenericInfoScreenAction = new Data_Foreign_Class.Decode(Data_Foreign_Generic.genericDecode(genericInfoScreenAction)(Data_Foreign_Generic_Class.genericDecodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "InfoScreenRendered";
+}))(Data_Foreign_Generic_Class.genericDecodeArgsNoArguments)(Data_Foreign_Generic_Class.genericCountArgsNoArguments))(Data_Foreign_Generic.defaultOptions));
+var infoScreenInteract = new Presto_Core_Types_Language_Interaction.Interact(function () {
+    return decodegenericInfoScreenAction;
+}, function () {
+    return encodeInfoScreen;
+}, function (x) {
+    return Presto_Core_Types_Language_Interaction.defaultInteract(encodeInfoScreen)(decodegenericInfoScreenAction)(x);
+});
+var decodegenericHomeScreenAction = new Data_Foreign_Class.Decode(Data_Foreign_Generic.genericDecode(genericHomeScreenAction)(Data_Foreign_Generic_Class.genericDecodeConstructor(new Data_Symbol.IsSymbol(function () {
+    return "HomeScreenClick";
+}))(Data_Foreign_Generic_Class.genericDecodeArgsNoArguments)(Data_Foreign_Generic_Class.genericCountArgsNoArguments))(Data_Foreign_Generic.defaultOptions));
+var homeScreenInteract = new Presto_Core_Types_Language_Interaction.Interact(function () {
+    return decodegenericHomeScreenAction;
+}, function () {
+    return encodeHomeScreen;
+}, function (x) {
+    return Presto_Core_Types_Language_Interaction.defaultInteract(encodeHomeScreen)(decodegenericHomeScreenAction)(x);
+});
 module.exports = {
+    HomeScreen: HomeScreen, 
+    HomeScreenClick: HomeScreenClick, 
+    InfoScreen: InfoScreen, 
+    InfoScreenRendered: InfoScreenRendered, 
     InitScreen: InitScreen, 
     InitScreenRendered: InitScreenRendered, 
-    SplashScreen: SplashScreen, 
-    SplashScreenRendered: SplashScreenRendered, 
-    splashScreenInteract: splashScreenInteract, 
-    genericSplashScreen: genericSplashScreen, 
-    encodeSplashScreen: encodeSplashScreen, 
-    genericSplashScreenAction: genericSplashScreenAction, 
-    decodegenericSplashScreenAction: decodegenericSplashScreenAction, 
+    genericHomeScreen: genericHomeScreen, 
+    encodeHomeScreen: encodeHomeScreen, 
+    genericHomeScreenAction: genericHomeScreenAction, 
+    decodegenericHomeScreenAction: decodegenericHomeScreenAction, 
+    homeScreenInteract: homeScreenInteract, 
+    genericInfoScreen: genericInfoScreen, 
+    encodeInfoScreen: encodeInfoScreen, 
+    genericInfoScreenAction: genericInfoScreenAction, 
+    decodegenericInfoScreenAction: decodegenericInfoScreenAction, 
+    infoScreenInteract: infoScreenInteract, 
     initScreenInteract: initScreenInteract, 
     genericInitScreen: genericInitScreen, 
     encodeInitScreen: encodeInitScreen, 
